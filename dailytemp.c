@@ -4,18 +4,18 @@
 #define SIZE 24
 
 void dtInit(int vect[]);
-void dtAdd(int vect[]);
 
 int main() {
     
+    int dailyTemperatures[SIZE];
 
-    int vector[SIZE];
-    dtInit( vector);
-    dtAdd( vector);
+   
+    dtInit(dailyTemperatures);
+
     
     printf("Daily temperatures values:\n");
     for(int i = 0; i < SIZE; i++) {
-        printf("Hour %d, Temp: %d\n", i, vector[i]);
+        printf("Hour %d: %d°C\n", i, dailyTemperatures[i]);
     }
 
     return 0;
@@ -23,16 +23,8 @@ int main() {
 
 
 void dtInit(int vect[]) {
-    for(int i = 0; i < SIZE; i++) {
-        vect[i] = 0; 
-    }
     
-}
-
-void dtAdd(int vect[]){
-
     for(int i = 0; i < SIZE; i++) {
         vect[i] = (rand()%100)-50; 
     }
-
 }
